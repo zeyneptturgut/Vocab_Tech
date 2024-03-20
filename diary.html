@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Definition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .image {
+            text-align: center;
+        }
+        .pronunciation {
+            font-style: italic;
+        }
+        .definition {
+            margin-top: 20px;
+        }
+        .example-sentence {
+            margin-top: 20px;
+        }
+        .contextual-info {
+            margin-top: 20px;
+        }
+        .activity {
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="https://d1e8vjamx1ssze.cloudfront.net/product-images/diary2jpg.webp" alt="Diary Image" width="300">
+        </div>
+        <h1>Diary</h1>
+        <p class="pronunciation">[ dahy-uh-ree ]</p>
+</div>
+        <div class="video">
+            <h2>Learn More:</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5t0jEV6rkkU" title="Diary Video" frameborder="0" allowfullscreen></iframe>
+        <div class="definition">
+            <h2>Definition:</h2>
+            <p>A diary is a daily record of personal experiences, thoughts, and reflections, typically kept for private use.</p>
+        </div>
+        <div class="example-sentence">
+            <h2>Example Sentence:</h2>
+            <p>Every night before going to bed, Sarah writes in her diary about the events of the day.</p>
+        </div>
+        <div class="contextual-info">
+            <h2>Contextual Information:</h2>
+            <p>Diaries are often used as a means of self-expression, self-reflection, or as a way to keep track of important events, feelings, or ideas over time. They can serve as valuable historical documents, providing insight into the daily lives and perspectives of individuals.</p>
+        </div>
+        <div class="activity">
+            <h2>Test Yourself:</h2>
+            <p>How well do you know about diaries? Answer the following question:</p>
+            <p>What is the primary purpose of keeping a diary?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="answer" value="option1">
+                <label for="option1">To record personal experiences and thoughts</label><br>
+                <input type="radio" id="option2" name="answer" value="option2">
+                <label for="option2">To create fictional stories</label><br>
+                <input type="radio" id="option3" name="answer" value="option3">
+                <label for="option3">To schedule daily events</label><br>
+                <input type="radio" id="option4" name="answer" value="option4">
+                <label for="option4">To draw sketches</label><br><br>
+                <input type="submit" value="Submit">
+            </form>
+            <div id="result" class="result" style="display: none;"></div>
+        
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const correctAnswer = "option1";
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            const resultDiv = document.getElementById("result");
+
+            if (selectedAnswer) {
+                if (selectedAnswer.value === correctAnswer) {
+                    resultDiv.textContent = "Correct! Keeping a diary is indeed to record personal experiences and thoughts.";
+                } else {
+                    resultDiv.textContent = "Incorrect! The primary purpose of keeping a diary is to record personal experiences and thoughts.";
+                }
+            } else {
+                resultDiv.textContent = "Please select an option.";
+            }
+            resultDiv.style.display = "block";
+        });
+    </script>
+</body>
+</html>
